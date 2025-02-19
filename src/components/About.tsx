@@ -16,7 +16,7 @@ const About = () => {
           
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Por que Escolher a DentalCare?
+              Por que Escolher a SorrirMais?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
               Com mais de 15 anos de experiência, construímos nossa reputação oferecendo

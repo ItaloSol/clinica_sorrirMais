@@ -1,6 +1,9 @@
-import React from 'react';
 
 const Hero = () => {
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta.');
+    window.open(`https://wa.me/5561996190502?text=${message}`, '_blank');
+  };
   return (
     <section id="home" className="pt-16">
       <div className="relative h-[600px]">
@@ -24,7 +27,7 @@ const Hero = () => {
                 Estamos comprometidos em dar a você o sorriso confiante que você merece.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
+                <button onClick={handleWhatsAppClick} className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
                   Agendar Consulta
                 </button>
                 <button className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white/10 transition-colors">

@@ -1,7 +1,12 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent('Olá! Gostaria de agendar uma consulta.');
+    window.open(`https://wa.me/5561996190502?text=${message}`, '_blank');
+  };
+
   return (
     <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,49 +56,31 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Envie uma Mensagem</h3>
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Nome
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  E-mail
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Mensagem
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                ></textarea>
-              </div>
-
+          <div className="space-y-8">
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Agende sua Consulta</h3>
               <button
-                type="submit"
-                className="w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
+                onClick={handleWhatsAppClick}
+                className="w-full bg-green-500 text-white px-6 py-4 rounded-md hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
               >
-                Enviar Mensagem
+                <MessageCircle className="w-6 h-6" />
+                Agendar via WhatsApp
               </button>
-            </form>
+            </div>
+
+            <div className="bg-white p-4 rounded-lg shadow-md h-[400px]">
+              <iframe
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.8076936254584!2d-48.01116500000001!3d-16.063635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDAzJzQ5LjEiUyA0OMKwMDAnNDAuMiJX!5e0!3m2!1spt-BR!2sbr!4v1709764543841!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-md"
+                title="Localização da Clínica"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
