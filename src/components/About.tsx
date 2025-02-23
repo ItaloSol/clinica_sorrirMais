@@ -8,7 +8,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&q=80"
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80"
               alt="Equipamento odontológico moderno"
               className="rounded-lg shadow-lg"
             />
@@ -19,7 +19,7 @@ const About = () => {
               Por que Escolher a SorrirMais?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Com mais de 15 anos de experiência, construímos nossa reputação oferecendo
+              Com mais de 5 anos de experiência, construímos nossa reputação oferecendo
               atendimento odontológico excepcional em um ambiente confortável e acolhedor.
             </p>
             

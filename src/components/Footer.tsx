@@ -1,4 +1,5 @@
-import { Facebook, Instagram, MapPinned } from 'lucide-react';
+import React from 'react';
+import { Facebook, MapPinned, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">SorrirMais</h3>
             <p className="text-gray-400">
-              Oferecendo atendimento odontológico excepcional e criando sorrisos bonitos desde 2008.
+              Oferecendo atendimento odontológico excepcional e criando sorrisos bonitos desde 2017.
             </p>
           </div>
 
@@ -36,13 +37,13 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Redes Sociais</h4>
             <div className="flex space-x-4">
-              <a target='_blank' href="https://www.facebook.com/sorrirmais.odontoval/" className="text-gray-400 hover:text-white">
+              <a target='_blank' href="https://www.facebook.com/sorrirmais.odontoval" className="text-gray-400 hover:text-white">
                 <Facebook className="w-6 h-6" />
               </a>
-              <a target='_blank' href="https://www.instagram.com/sorrirmais.odonto/" className="text-gray-400 hover:text-white">
+              <a target='_blank' href="https://www.instagram.com/sorrirmais.odonto" className="text-gray-400 hover:text-white">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a target='_blank' href="https://maps.app.goo.gl/LNP7LtrHuLYBbQVM6" className="text-gray-400 hover:text-white">
+              <a target='_blank' href="https://maps.app.goo.gl/gccYiwmp5tLfuraGA" className="text-gray-400 hover:text-white">
                 <MapPinned className="w-6 h-6" />
               </a>
             </div>

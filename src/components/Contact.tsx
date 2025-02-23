@@ -21,24 +21,30 @@ const Contact = () => {
               <div className="flex items-start">
                 <MapPin className="w-6 h-6 text-blue-600 mt-1 mr-4" />
                 <div>
+                  <a href='https://maps.app.goo.gl/gccYiwmp5tLfuraGA'>
                   <h3 className="font-semibold text-gray-900">Localização</h3>
-                  <p className="text-gray-600">Rua Dental, 123, Cidade da Saúde, 12345</p>
+                  <p className="text-gray-600">R. Tupinambás, Quadra 16 - Loja 07 <br></br> Anhanguera C, Valparaíso de Goiás - GO </p>
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <Phone className="w-6 h-6 text-blue-600 mt-1 mr-4" />
                 <div>
+                  <a href='tel:996190502'>
                   <h3 className="font-semibold text-gray-900">Telefone</h3>
-                  <p className="text-gray-600">(11) 3456-7890</p>
+                  <p className="text-gray-600">(61) 99619-0502</p>
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <Mail className="w-6 h-6 text-blue-600 mt-1 mr-4" />
                 <div>
+                  <a href='mailto:gerencia.sorrirmais@gmail.com'>
                   <h3 className="font-semibold text-gray-900">E-mail</h3>
-                  <p className="text-gray-600">contato@dentalcare.com.br</p>
+                  <p className="text-gray-600">gerencia.sorrirmais@gmail.com</p>
+                  </a>
                 </div>
               </div>
 
@@ -47,8 +53,8 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-gray-900">Horário de Funcionamento</h3>
                   <p className="text-gray-600">
-                    Segunda a Sexta: 9:00 às 18:00<br />
-                    Sábado: 9:00 às 14:00<br />
+                    Segunda a Sexta: 8:30 às 18:00<br />
+                    Sábado: 8:30 às 12:00<br />
                     Domingo: Fechado
                   </p>
                 </div>
