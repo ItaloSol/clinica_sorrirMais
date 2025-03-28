@@ -1,25 +1,34 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import dentista1 from '../img/Dentista_1.jpg';
+// Define team data structure
+interface TeamMember {
+  name: string;
+  role: string;
+  description: string;
+  image: string;
+}
 
-const team = [
+// Sample team data
+const team: TeamMember[] = [
   {
-    name: 'Dra. Sarah Johnson',
-    role: 'Dentista Responsável',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80',
-    description: 'Especialista em odontologia estética com mais de 10 anos de experiência.'
-  },
-  {
-    name: 'Dr. Michael Chen',
-    role: 'Ortodontista',
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80',
-    description: 'Especialista em tratamentos com aparelhos tradicionais e invisíveis.'
-  },
-  {
-    name: 'Dra. Emily Rodriguez',
-    role: 'Odontopediatra',
+    name: 'Dra. Mariana Amaral',
+    role: 'Clínico Geral e Ortodontista',
     image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80',
-    description: 'Dedicada a proporcionar um atendimento gentil para nossos pacientes mais jovens.'
+    description: 'Especialista em tratamentos ortodônticos e atendimento clínico geral.'
+  },
+  {
+    name: 'Dra. Mayhara Dantas',
+    role: 'Endodontista e Harmonização Facial',
+    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80',
+    description: 'Especialista em tratamentos de canal e procedimentos de harmonização facial.'
+  },
+  {
+    name: 'Dr. Franklin Vieira',
+    role: 'Implantodontista, Cirurgião Oral e Estética Dental',
+    image: dentista1,
+    description: 'Especialista em implantes dentários, cirurgias orais e procedimentos estéticos.'
   }
+  // Add more team members as needed
 ];
 
 const Team = () => {
@@ -28,10 +37,10 @@ const Team = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-3xl font-bold text-gray-900 mb-4"
           >
             Conheça Nossa Equipe
@@ -40,7 +49,7 @@ const Team = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
             Nossa experiente equipe de profissionais está comprometida em proporcionar
@@ -52,18 +61,20 @@ const Team = () => {
           {team.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, x: -30 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              whileHover={{ y: -10 }}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeInOut" } }}
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
             >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-64 object-cover"
-              />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-blue-600 mb-3">{member.role}</p>

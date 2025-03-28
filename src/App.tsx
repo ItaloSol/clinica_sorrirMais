@@ -1,4 +1,3 @@
-import React from 'react';
 import { MessageCircle } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -15,7 +14,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="min-h-screen bg-white relative overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />

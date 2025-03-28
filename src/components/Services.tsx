@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import { 
-  Bluetooth as Tooth, 
-  Sparkles, 
-  Stethoscope, 
-  BadgeCheck,
-  ShieldCheck,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import denteIcon from '/src/img/dente.svg'; // Importando o SVG como um componente
-import denteIcon1 from '/src/img/dente.svg'; // Importando o SVG como um componente
 import denteIcon2 from '/src/img/dente2.svg'; // Importando o SVG como um componente
 import denteIcon3 from '/src/img/dente3.svg'; // Importando o SVG como um componente
 import denteIcon4 from '/src/img/dente4.svg'; // Importando o SVG como um componente
@@ -29,15 +22,9 @@ const services = [
   },
   {
     icon: <img src={denteIcon2} alt="Dente" className="w-8 h-8" />, // Usando o SVG como uma imagem
-    title: 'Ortodontia',
-    description: 'Correção do alinhamento dental com diferentes opções de tratamento, incluindo aparelhos convencionais, autoligados e alinhadores invisíveis. Planejamento personalizado para resultados eficientes e confortáveis.'
+    title: 'Aparelho Ortodôntico',
+    description: 'Oferecemos diversos tipos de aparelhos ortodônticos, desde os tradicionais até os mais modernos. Tratamento personalizado para cada paciente, com acompanhamento regular e resultados precisos.'
   },
-  {
-    icon: <img src={denteIcon3} alt="Dente" className="w-8 h-8" />, // Usando o SVG como uma imagem
-    title: 'E muito mais',
-    description: 'Oferecemos uma ampla gama de tratamentos odontológicos especializados, incluindo periodontia, endodontia, odontopediatria e tratamentos para DTM. Consulte-nos para conhecer todas as opções disponíveis.'
-  },
- 
   {
     icon: <img src={denteIcon4} alt="Dente" className="w-8 h-8" />, // Usando o SVG como uma imagem
     title: 'Restauração Dental',
@@ -57,18 +44,41 @@ const services = [
     icon: <img src={denteIcon2} alt="Dente" className="w-8 h-8" />, // Usando o SVG como uma imagem
     title: 'Próteses Dentárias',
     description: 'Soluções personalizadas para substituição de dentes, incluindo próteses fixas e removíveis. Confeccionadas com materiais de alta qualidade para garantir conforto, funcionalidade e naturalidade.'
-  },
-  {
-    icon: <img src={denteIcon} alt="Dente" className="w-8 h-8" />, // Usando o SVG como uma imagem
-    title: 'Aparelho Ortodôntico',
-    description: 'Oferecemos diversos tipos de aparelhos ortodônticos, desde os tradicionais até os mais modernos alinhadores invisíveis. Tratamento personalizado para cada paciente, com acompanhamento regular e resultados precisos.'
   }
+  
 ];
 
 const Services = () => {
   const [currentPage, setCurrentPage] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const itemsPerPage = 4;
   const totalPages = Math.ceil(services.length / itemsPerPage);
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextPage();
+    } else if (isRightSwipe) {
+      prevPage();
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   const nextPage = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
@@ -107,24 +117,28 @@ const Services = () => {
           </motion.p>
         </div>
 
-        <div className="relative">
+        <div className="relative"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={currentPage}
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             >
               {currentServices.map((service, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5, delay: index * 0.1, type: "spring" }}
+                  whileHover={{ scale: 1.05, y: -10 }}
                   className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                 >
                   <div className="mb-4">{service.icon}</div>

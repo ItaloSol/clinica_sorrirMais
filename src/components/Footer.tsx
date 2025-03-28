@@ -1,13 +1,12 @@
-import React from 'react';
 import { Facebook, MapPinned, Instagram } from 'lucide-react';
-
+import Logo from '../img/logo.png';
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">SorrirMais</h3>
+            <img src={Logo} alt="SorrirMais Logo" className="w-32 h-auto mb-4" />
             <p className="text-gray-400">
               Oferecendo atendimento odontológico excepcional e criando sorrisos bonitos desde 2017.
             </p>
@@ -37,13 +36,13 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Redes Sociais</h4>
             <div className="flex space-x-4">
-              <a target='_blank' href="https://www.facebook.com/sorrirmais.odontoval" className="text-gray-400 hover:text-white">
+              <a target='_blank' rel="noopener" href="https://www.facebook.com/sorrirmais.odontoval" className="text-gray-400 hover:text-white">
                 <Facebook className="w-6 h-6" />
               </a>
-              <a target='_blank' href="https://www.instagram.com/sorrirmais.odonto" className="text-gray-400 hover:text-white">
+              <a target='_blank' rel="noopener" href="https://www.instagram.com/sorrirmais.odonto" className="text-gray-400 hover:text-white">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a target='_blank' href="https://maps.app.goo.gl/gccYiwmp5tLfuraGA" className="text-gray-400 hover:text-white">
+              <a target='_blank' rel="noopener" href="https://maps.app.goo.gl/gccYiwmp5tLfuraGA" className="text-gray-400 hover:text-white">
                 <MapPinned className="w-6 h-6" />
               </a>
             </div>
