@@ -6,6 +6,7 @@ import About from './components/About';
 import Team from './components/Team';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Testimonials from './components/Testimonials';
 
 function App() {
   const handleWhatsAppClick = () => {
@@ -18,6 +19,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <Testimonials />
         <Services />
         <About />
         <Team />

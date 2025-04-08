@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import dentista1 from '../img/Dentista_1.jpg';
+import mari from '../img/mari.png';
 // Define team data structure
 interface TeamMember {
   name: string;
@@ -13,13 +14,13 @@ const team: TeamMember[] = [
   {
     name: 'Dra. Mariana Amaral',
     role: 'Clínico Geral e Ortodontista',
-    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80',
+    image: mari,
     description: 'Especialista em tratamentos ortodônticos e atendimento clínico geral.'
   },
   {
     name: 'Dra. Mayhara Dantas',
     role: 'Endodontista e Harmonização Facial',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80',
     description: 'Especialista em tratamentos de canal e procedimentos de harmonização facial.'
   },
   {
