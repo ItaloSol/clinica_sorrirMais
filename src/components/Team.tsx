@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import dentista1 from '../img/Dentista_1.jpg';
+import dentista1 from '../img/frank.png';
 import mari from '../img/mari.png';
+import mayara from '../img/mayara.png';
 // Define team data structure
 interface TeamMember {
   name: string;
@@ -20,7 +21,7 @@ const team: TeamMember[] = [
   {
     name: 'Dra. Mayhara Dantas',
     role: 'Endodontista e Harmonização Facial',
-    image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80',
+    image: mayara,
     description: 'Especialista em tratamentos de canal e procedimentos de harmonização facial.'
   },
   {
@@ -69,7 +70,7 @@ const Team = () => {
               whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeInOut" } }}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[16/9] overflow-hidden flex justify-center items-center bg-gray-100">
                 <img
                   src={member.image}
                   alt={member.name}
