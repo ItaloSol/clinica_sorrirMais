@@ -1,5 +1,5 @@
 import { Facebook, MapPinned, Instagram } from 'lucide-react';
-import Logo from '../img/logo.png';
+import Logo from '../img/logo.webp';
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">

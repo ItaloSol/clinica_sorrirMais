@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import Logo from '../img/logo.png';
+import Logo from '../img/logo.webp';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleWhatsAppClick = () => {

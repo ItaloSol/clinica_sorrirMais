@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import dentista1 from '../img/frank.png';
-import mari from '../img/mari.png';
-import mayara from '../img/mayara.png';
+import dentista1 from '../img/frank.webp';
+import mari from '../img/mari.webp';
+import mayara from '../img/mayara.webp';
 // Define team data structure
 interface TeamMember {
   name: string;
